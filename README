@@ -1,0 +1,7 @@
+My vim config
+
+Using vundle
+Should work on mac and linux
+
+To use, clone into ~/.vim and ln -s ~/.vim/vimrc .vimrc
+
