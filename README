@@ -8,7 +8,9 @@ git clone https://github.com/meako689/dotvim.git ~/.vim
 git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
 ln -s ~/.vim/vimrc ~/.vimrc
 
-then start vim and call :BundleInstall
+start vim and call :BundleInstall
+
+and finally install fonts from dir .vim/fonts/ anyway you like
 
 enjoy!
 
