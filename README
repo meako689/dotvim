@@ -3,5 +3,12 @@ My vim config
 Using vundle
 Should work on mac and linux
 
-To use, clone into ~/.vim and ln -s ~/.vim/vimrc .vimrc
+To use:
+git clone https://github.com/meako689/dotvim.git ~/.vim
+git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
+ln -s ~/.vim/vimrc ~/.vimrc
+
+then start vim and call :BundleInstall
+
+enjoy!
 
