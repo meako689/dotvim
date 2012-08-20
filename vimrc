@@ -27,7 +27,6 @@ filetype plugin indent on
 set autoindent
 set smartindent
 set showmatch
-set guioptions-=T
 set t_Co=256
 set viminfo+=! 
 set showmode
@@ -53,16 +52,27 @@ syntax on
 filetype on
 filetype plugin on
 
-set lsp=0 "no blank spaces on display
 set backspace=2 " make backspace work like most other apps
 set whichwrap+=<,>,h,l
-set hid "hide abbadoned buffers"
+set hid "hide abbadoned buffers
 set shortmess=atI
 set tabstop=4
-"set gfn=Droid\ Sans\ Mono:h13
-"set gfn=Droid\ Sans\ Mono\ for\ Powerline:h13
-set guifont=Droid\ Sans\ Mono\ for\ Powerline:h13
-let g:Powerline_symbols = 'fancy'
+
+"graphics
+if has("gui_running")
+  let g:Powerline_symbols = 'fancy'
+  if has("gui_gtk2")
+    set guifont=Droid\ Sans\ Mono\ for\ Powerline\ 10
+    set lsp=1 "blank spaces between lines
+  elseif has("gui_macvim")
+    set guifont=Droid\ Sans\ Mono\ for\ Powerline:h13
+    set lsp=0 "no blank spaces on display
+  "elseif has("gui_win32")
+    "set guifont=Droid\ Sans\ Mono\ for\ Powerline:h13
+  endif
+endif
+set guioptions-=T
+
 let g:Powerline_stl_path_style='short'
 "let g:Powerline_theme="skwp"
 
@@ -80,7 +90,6 @@ set fileencodings=utf-8,cp1251,koi8-r,cp866
 autocmd FileType css set smartindent
 autocmd FileType html set formatoptions+=tl
 autocmd FileType asm set shiftwidth=8
-"au Filetype xhtml,htm,html,xml,xsl source ~/.vim/scripts/closetag.vim 
 autocmd FileType html,xhtml,htm,htmldjango colorscheme django 
 autocmd FileType python colorscheme molokai "rdark
 autocmd BufRead settings.py colorscheme two2tango
@@ -173,15 +182,19 @@ let g:bufExplorerShowRelativePath=1
   map Б <
   map Ю >
 
+"Usual typos
 command WQ wq
 command Wq wq
 command WA wa
 command Wa wa
 command W w
 command Q q
+command Vs vs
 
+"hate long lines. Especially in python
 map  :match ErrorMsg '\%>80v.\+'
 
+"current date
 nnoremap <F9> "=strftime("%c")<CR>P
 inoremap <F9> <C-R>=strftime("%c")<CR>
 
