@@ -87,6 +87,8 @@ autocmd BufRead settings.py colorscheme two2tango
 autocmd BufRead settings_local.py colorscheme two2tango
 autocmd BufRead settings_dev.py colorscheme two2tango
 autocmd BufReadPost * call Pl#Load() "fix colorschemes in powerline
+let g:molokai_original = 1
+
 if has('gui_running')
         colorscheme slate
     else
@@ -182,6 +184,15 @@ map  :match ErrorMsg '\%>80v.\+'
 
 nnoremap <F9> "=strftime("%c")<CR>P
 inoremap <F9> <C-R>=strftime("%c")<CR>
+
+"swap parameters around equal sign
+fu! SwapFunc()
+    "s!\([^ =]*\)\([ ]*\)=[ ]*\([^;]*\);!\3 = \1;!<CR>:nohl<CR>
+    s/\([^=]*\)\s\+=\s\+\([^;]*\)/\2 = \1
+    "C style
+    "s/^\s*\(.\{-}\)\s*=\s*\(.\{-}\)\s*;\s*$/\2 = \1;/
+endfun
+command Swapequal call SwapFunc()
 
 "XML stuff
 command Fixxml silent 1,$!xmllint --format --recover --encode utf8 - 2>/dev/null
