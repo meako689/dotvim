@@ -10,16 +10,17 @@ Bundle 'gmarik/vundle'
 Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'Lokaltog/vim-powerline'
-Bundle 'bufexplorer.zip'
 Bundle 'garbas/vim-snipmate'
 Bundle 'MarcWeber/vim-addon-mw-utils'
 Bundle 'tpope/vim-surround'
-Bundle 'vcscommand.vim'
 Bundle 'gregsexton/MatchTag'
 Bundle 'ervandew/supertab'
 Bundle 'tomtom/tlib_vim'
 Bundle "honza/snipmate-snippets"
+Bundle "tpope/vim-repeat"
 Bundle "closetag.vim"
+Bundle 'vcscommand.vim'
+Bundle 'bufexplorer.zip'
 
 
 filetype plugin indent on 
