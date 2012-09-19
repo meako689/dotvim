@@ -195,6 +195,10 @@ command Vs vs
 "hate long lines. Especially in python
 map  :match ErrorMsg '\%>80v.\+'
 
+
+nmap ,i :set foldmethod=indent<CR>
+nmap ,m :set foldmethod=manual<CR>
+
 "current date
 nnoremap <F9> "=strftime("%c")<CR>P
 inoremap <F9> <C-R>=strftime("%c")<CR>
