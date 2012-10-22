@@ -2,6 +2,8 @@ set nocompatible               " be iMproved
 filetype off                   " required!
 
 set rtp+=~/.vim/bundle/vundle/
+"uncomment next if this config is not in default dir
+"let &rtp = substitute(&rtp, '\.vim\>', '.meavim', 'g')
 call vundle#rc()
 
 " let Vundle manage Vundle
