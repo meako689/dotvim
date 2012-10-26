@@ -3,6 +3,10 @@ filetype off                   " required!
 
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
+"
+"if .vim dir is not on default location
+"
+"let &rtp = substitute(&rtp, '\.vim\>', '.meavim', 'g')
 
 " let Vundle manage Vundle
 " required! 
@@ -92,6 +96,7 @@ autocmd FileType css set smartindent
 autocmd FileType html set formatoptions+=tl
 autocmd FileType asm set shiftwidth=8
 autocmd FileType html,xhtml,htm,htmldjango colorscheme django 
+autocmd FileType html,xhtml,htm,htmldjango setl sw=2 sts=2 et
 autocmd FileType python colorscheme molokai "rdark
 autocmd BufRead settings.py colorscheme two2tango
 autocmd BufRead settings_local.py colorscheme two2tango
