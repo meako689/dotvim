@@ -23,6 +23,7 @@ Bundle "tpope/vim-repeat"
 Bundle "closetag.vim"
 Bundle 'vcscommand.vim'
 Bundle 'bufexplorer.zip'
+Bundle 'kien/ctrlp.vim'
 
 
 filetype plugin indent on 
