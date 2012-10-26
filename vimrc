@@ -2,6 +2,8 @@ set nocompatible               " be iMproved
 filetype off                   " required!
 
 set rtp+=~/.vim/bundle/vundle/
+"uncomment next if this config is not in default dir
+"let &rtp = substitute(&rtp, '\.vim\>', '.meavim', 'g')
 call vundle#rc()
 "
 "if .vim dir is not on default location
@@ -25,6 +27,7 @@ Bundle "tpope/vim-repeat"
 Bundle "closetag.vim"
 Bundle 'vcscommand.vim'
 Bundle 'bufexplorer.zip'
+Bundle 'kien/ctrlp.vim'
 
 
 filetype plugin indent on 
