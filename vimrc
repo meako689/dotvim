@@ -41,6 +41,7 @@ set showmode
 set showcmd
 set mouse=a
 set ruler
+set cursorline
 set background=dark
 set scrolloff=2
 set wrap
