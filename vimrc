@@ -28,6 +28,7 @@ Bundle "closetag.vim"
 Bundle 'vcscommand.vim'
 Bundle 'bufexplorer.zip'
 Bundle 'kien/ctrlp.vim'
+Bundle 'scrooloose/syntastic'
 
 
 filetype plugin indent on 
@@ -207,6 +208,7 @@ map  :match ErrorMsg '\%>80v.\+'
 
 nmap ,i :set foldmethod=indent<CR>
 nmap ,m :set foldmethod=manual<CR>
+nmap ,s :SyntasticToggleMode<CR>
 
 "current date
 nnoremap <F9> "=strftime("%c")<CR>P
