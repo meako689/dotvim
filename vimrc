@@ -29,6 +29,7 @@ Bundle 'vcscommand.vim'
 Bundle 'bufexplorer.zip'
 Bundle 'kien/ctrlp.vim'
 Bundle 'scrooloose/syntastic'
+Bundle 'VOoM'
 
 
 filetype plugin indent on 
@@ -102,7 +103,7 @@ autocmd FileType html set formatoptions+=tl
 autocmd FileType asm set shiftwidth=8
 autocmd FileType html,xhtml,htm,htmldjango colorscheme django 
 autocmd FileType html,xhtml,htm,htmldjango setl sw=2 sts=2 et
-autocmd FileType python colorscheme molokai "rdark
+autocmd FileType python,javacript colorscheme molokai "rdark
 autocmd BufRead settings.py colorscheme two2tango
 autocmd BufRead settings_local.py colorscheme two2tango
 autocmd BufRead settings_dev.py colorscheme two2tango
@@ -225,5 +226,6 @@ command Swapequal call SwapFunc()
 
 "XML stuff
 command Fixxml silent 1,$!xmllint --format --recover --encode utf8 - 2>/dev/null
+command Fixjson silent 1,$!python -m json.tool
 au Filetype html,xml,xsl source ~/.vim/bundle/closetag.vim/plugin/closetag.vim
 
