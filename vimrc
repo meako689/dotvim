@@ -210,6 +210,7 @@ map  :match ErrorMsg '\%>80v.\+'
 nmap ,i :set foldmethod=indent<CR>
 nmap ,m :set foldmethod=manual<CR>
 nmap ,s :SyntasticToggleMode<CR>
+nmap ,l :set spell spelllang=uk_ua<CR>
 
 "current date
 nnoremap <F9> "=strftime("%c")<CR>P
