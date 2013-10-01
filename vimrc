@@ -15,7 +15,7 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/nerdcommenter'
-Bundle 'Lokaltog/vim-powerline'
+Bundle 'Lokaltog/powerline'
 Bundle 'garbas/vim-snipmate'
 Bundle 'MarcWeber/vim-addon-mw-utils'
 Bundle 'tpope/vim-surround'
@@ -30,6 +30,8 @@ Bundle 'bufexplorer.zip'
 Bundle 'kien/ctrlp.vim'
 Bundle 'scrooloose/syntastic'
 Bundle 'VOoM'
+Bundle 'hdima/python-syntax'
+Bundle 'jelera/vim-javascript-syntax'
 
 
 filetype plugin indent on 
