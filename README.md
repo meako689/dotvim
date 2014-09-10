@@ -15,7 +15,7 @@ start vim and call :BundleInstall
 and finally install fonts from dir .vim/fonts/ anyway you like
 
 Alternatively you can get fonts from:
-https://github.com/Lokaltog/vim-powerline/wiki/Patched-fonts
+https://github.com/Lokaltog/powerline-fonts
 
 Or set your own and disable 'fancy' option for powerline
 
