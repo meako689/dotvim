@@ -15,14 +15,13 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/nerdcommenter'
-Bundle 'Lokaltog/powerline'
+Bundle 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
 Bundle 'garbas/vim-snipmate'
 Bundle 'MarcWeber/vim-addon-mw-utils'
 Bundle 'tpope/vim-surround'
 Bundle 'gregsexton/MatchTag'
 Bundle 'ervandew/supertab'
 Bundle 'tomtom/tlib_vim'
-Bundle "honza/snipmate-snippets"
 Bundle "tpope/vim-repeat"
 Bundle "closetag.vim"
 Bundle 'vcscommand.vim'
@@ -32,6 +31,9 @@ Bundle 'scrooloose/syntastic'
 Bundle 'VOoM'
 Bundle 'hdima/python-syntax'
 Bundle 'jelera/vim-javascript-syntax'
+Bundle 'drmikehenry/vim-fontsize'
+Bundle 'greyblake/vim-preview'
+
 
 
 filetype plugin indent on 
@@ -103,13 +105,10 @@ set fileencodings=utf-8,cp1251,koi8-r,cp866
 autocmd FileType css set smartindent
 autocmd FileType html set formatoptions+=tl
 autocmd FileType asm set shiftwidth=8
-autocmd FileType html,xhtml,htm,htmldjango colorscheme django 
-autocmd FileType html,xhtml,htm,htmldjango setl sw=2 sts=2 et
-autocmd FileType python,javacript colorscheme molokai "rdark
-autocmd BufRead settings.py colorscheme two2tango
-autocmd BufRead settings_local.py colorscheme two2tango
-autocmd BufRead settings_dev.py colorscheme two2tango
-autocmd BufReadPost * call Pl#Load() "fix colorschemes in powerline
+autocmd FileType html,xhtml,htm,htmldjango nested colorscheme django
+autocmd FileType html,xhtml,htm,htmldjango,javascript setl sw=2 sts=2 et
+autocmd FileType python nested colorscheme solarized "rdark
+autocmd BufRead settings.py nested colorscheme two2tango
 let g:molokai_original = 1
 
 if has('gui_running')
@@ -205,6 +204,14 @@ command W w
 command Q q
 command Vs vs
 
+"firefox style
+nnoremap <C-S-tab> :tabprevious<CR>
+nnoremap <C-tab>   :tabnext<CR>
+nnoremap <C-t>     :tabnew<CR>
+inoremap <C-S-tab> <Esc>:tabprevious<CR>i
+inoremap <C-tab>   <Esc>:tabnext<CR>i
+inoremap <C-t>     <Esc>:tabnew<CR>
+
 "hate long lines. Especially in python
 map  :match ErrorMsg '\%>80v.\+'
 
@@ -232,3 +239,4 @@ command Fixxml silent 1,$!xmllint --format --recover --encode utf8 - 2>/dev/null
 command Fixjson silent 1,$!python -m json.tool
 au Filetype html,xml,xsl source ~/.vim/bundle/closetag.vim/plugin/closetag.vim
 
+let g:syntastic_javascript_checkers = ['jshint']
