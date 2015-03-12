@@ -15,7 +15,7 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/nerdcommenter'
-Bundle 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
+Bundle 'powerline/powerline', {'rtp': 'powerline/bindings/vim/'}
 Bundle 'garbas/vim-snipmate'
 Bundle 'honza/vim-snippets'
 Bundle 'MarcWeber/vim-addon-mw-utils'
@@ -34,6 +34,8 @@ Bundle 'hdima/python-syntax'
 Bundle 'jelera/vim-javascript-syntax'
 Bundle 'drmikehenry/vim-fontsize'
 Bundle 'greyblake/vim-preview'
+Bundle 'vim-auto-save'
+let g:PreviewBrowsers='chromium'
 
 
 
@@ -106,9 +108,9 @@ set fileencodings=utf-8,cp1251,koi8-r,cp866
 autocmd FileType css set smartindent
 autocmd FileType html set formatoptions+=tl
 autocmd FileType asm set shiftwidth=8
-autocmd FileType html,xhtml,htm,htmldjango nested colorscheme django
+"autocmd FileType html,xhtml,htm,htmldjango nested colorscheme django
 autocmd FileType html,xhtml,htm,htmldjango,javascript setl sw=2 sts=2 et
-autocmd FileType python nested colorscheme solarized "rdark
+autocmd FileType python,javascript nested colorscheme solarized "rdark
 autocmd BufRead settings.py nested colorscheme two2tango
 let g:molokai_original = 1
 
@@ -204,6 +206,7 @@ command Wa wa
 command W w
 command Q q
 command Vs vs
+command E e
 
 "firefox style
 nnoremap <C-S-tab> :tabprevious<CR>
@@ -233,11 +236,17 @@ fu! SwapFunc()
     "C style
     "s/^\s*\(.\{-}\)\s*=\s*\(.\{-}\)\s*;\s*$/\2 = \1;/
 endfun
-command Swapequal call SwapFunc()
+function LiveDown()
+    !livedown start % --open --browser=chromium &
+    AutoSaveToggle
+endfunction
+
 
 "XML stuff
 command Fixxml silent 1,$!xmllint --format --recover --encode utf8 - 2>/dev/null
 command Fixjson silent 1,$!python -m json.tool
+command Livedown call LiveDown()
+command Swapequal call SwapFunc()
 au Filetype html,xml,xsl source ~/.vim/bundle/closetag.vim/plugin/closetag.vim
 
 let g:syntastic_javascript_checkers = ['jshint']
