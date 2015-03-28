@@ -112,6 +112,7 @@ autocmd FileType asm set shiftwidth=8
 autocmd FileType html,xhtml,htm,htmldjango,javascript setl sw=2 sts=2 et
 autocmd FileType python,javascript nested colorscheme solarized "rdark
 autocmd BufRead settings.py nested colorscheme two2tango
+au BufNewFile,BufRead *.html5 set filetype=html
 let g:molokai_original = 1
 
 if has('gui_running')
