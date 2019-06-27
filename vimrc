@@ -15,7 +15,7 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/nerdcommenter'
-Bundle 'powerline/powerline', {'rtp': 'powerline/bindings/vim/'}
+Plugin 'vim-airline/vim-airline'
 Bundle 'garbas/vim-snipmate'
 Bundle 'honza/vim-snippets'
 Bundle 'MarcWeber/vim-addon-mw-utils'
@@ -24,17 +24,18 @@ Bundle 'gregsexton/MatchTag'
 Bundle 'ervandew/supertab'
 Bundle 'tomtom/tlib_vim'
 Bundle "tpope/vim-repeat"
-Bundle "closetag.vim"
-Bundle 'vcscommand.vim'
+Bundle "tpope/vim-fugitive"
 Bundle 'bufexplorer.zip'
-Bundle 'kien/ctrlp.vim'
-Bundle 'scrooloose/syntastic'
+Bundle 'ctrlpvim/ctrlp.vim'
+Bundle 'vim-syntastic/syntastic'
 Bundle 'VOoM'
-Bundle 'hdima/python-syntax'
-Bundle 'jelera/vim-javascript-syntax'
 Bundle 'drmikehenry/vim-fontsize'
 Bundle 'greyblake/vim-preview'
+Bundle 'yegappan/grep'
 Bundle 'vim-auto-save'
+Bundle 'w0rp/ale'
+Bundle 'sheerun/vim-polyglot'
+
 let g:PreviewBrowsers='chromium'
 
 
@@ -105,14 +106,7 @@ set fileencodings=utf-8,cp1251,koi8-r,cp866
 "filetype-specific settings"
 
 "autocmd FileType mail set formatoptions+=t textwidth=72
-autocmd FileType css set smartindent
-autocmd FileType html set formatoptions+=tl
-autocmd FileType asm set shiftwidth=8
-"autocmd FileType html,xhtml,htm,htmldjango nested colorscheme django
-autocmd FileType html,xhtml,htm,htmldjango,javascript setl sw=2 sts=2 et
 autocmd FileType python,javascript nested colorscheme solarized "rdark
-autocmd BufRead settings.py nested colorscheme two2tango
-au BufNewFile,BufRead *.html5 set filetype=html
 let g:molokai_original = 1
 
 if has('gui_running')
@@ -248,6 +242,7 @@ command Fixxml silent 1,$!xmllint --format --recover --encode utf8 - 2>/dev/null
 command Fixjson silent 1,$!python -m json.tool
 command Livedown call LiveDown()
 command Swapequal call SwapFunc()
-au Filetype html,xml,xsl source ~/.vim/bundle/closetag.vim/plugin/closetag.vim
 
 let g:syntastic_javascript_checkers = ['jshint']
+
+nnoremap <C-f> :Gitgrep <cword> :/ <CR>
