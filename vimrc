@@ -12,35 +12,41 @@ call vundle#rc()
 
 " let Vundle manage Vundle
 " required! 
-Bundle 'gmarik/vundle'
-Bundle 'scrooloose/nerdtree'
-Bundle 'scrooloose/nerdcommenter'
+Plugin 'gmarik/vundle'
+Plugin 'scrooloose/nerdtree'
+Plugin 'scrooloose/nerdcommenter'
 Plugin 'vim-airline/vim-airline'
-Bundle 'garbas/vim-snipmate'
-Bundle 'honza/vim-snippets'
-Bundle 'MarcWeber/vim-addon-mw-utils'
-Bundle 'tpope/vim-surround'
-Bundle 'gregsexton/MatchTag'
-Bundle 'ervandew/supertab'
-Bundle 'tomtom/tlib_vim'
-Bundle "tpope/vim-repeat"
-Bundle "tpope/vim-fugitive"
-Bundle 'bufexplorer.zip'
-Bundle 'ctrlpvim/ctrlp.vim'
-Bundle 'vim-syntastic/syntastic'
-Bundle 'VOoM'
-Bundle 'drmikehenry/vim-fontsize'
-Bundle 'greyblake/vim-preview'
-Bundle 'yegappan/grep'
-Bundle 'vim-auto-save'
-Bundle 'w0rp/ale'
-Bundle 'sheerun/vim-polyglot'
+Plugin 'garbas/vim-snipmate'
+Plugin 'honza/vim-snippets'
+Plugin 'MarcWeber/vim-addon-mw-utils'
+Plugin 'tpope/vim-surround'
+Plugin 'gregsexton/MatchTag'
+Plugin 'ervandew/supertab'
+Plugin 'tomtom/tlib_vim'
+Plugin 'tpope/vim-repeat'
+Plugin 'tpope/vim-fugitive'
+Plugin 'bufexplorer.zip'
+Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'vim-syntastic/syntastic'
+Plugin 'VOoM'
+Plugin 'drmikehenry/vim-fontsize'
+Plugin 'greyblake/vim-preview'
+Plugin 'yegappan/grep'
+Plugin 'vim-auto-save'
+Plugin 'w0rp/ale'
+Plugin 'sheerun/vim-polyglot'
+Plugin 'romainl/flattened'
+Plugin 'morhetz/gruvbox'
 
 let g:PreviewBrowsers='chromium'
 
 
 
 filetype plugin indent on 
+"
+"autocmd FileType mail set formatoptions+=t textwidth=72
+autocmd FileType python,javascript,typescript nested colorscheme gruvbox "rdark
+let g:molokai_original = 1
 
 set autoindent
 set smartindent
@@ -77,23 +83,8 @@ set hid "hide abbadoned buffers
 set shortmess=atI
 set tabstop=4
 
-"graphics
-if has("gui_running")
-  let g:Powerline_symbols = 'fancy'
-  if has("gui_gtk2")
-    set guifont=Droid\ Sans\ Mono\ for\ Powerline\ 10
-    set lsp=1 "blank spaces between lines
-  elseif has("gui_macvim")
-    set guifont=Droid\ Sans\ Mono\ for\ Powerline:h13
-    set lsp=0 "no blank spaces on display
-  "elseif has("gui_win32")
-    "set guifont=Droid\ Sans\ Mono\ for\ Powerline:h13
-  endif
-endif
 set guioptions-=T
 
-let g:Powerline_stl_path_style='short'
-"let g:Powerline_theme="skwp"
 
 "tabs stuff
 set softtabstop=4
@@ -105,9 +96,6 @@ set fileencodings=utf-8,cp1251,koi8-r,cp866
 
 "filetype-specific settings"
 
-"autocmd FileType mail set formatoptions+=t textwidth=72
-autocmd FileType python,javascript nested colorscheme solarized "rdark
-let g:molokai_original = 1
 
 if has('gui_running')
         colorscheme slate
