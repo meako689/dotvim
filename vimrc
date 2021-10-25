@@ -1,10 +1,10 @@
 set nocompatible               " be iMproved
 filetype off                   " required!
 
-set rtp+=~/.vim/bundle/vundle/
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 "uncomment next if this config is not in default dir
 "let &rtp = substitute(&rtp, '\.vim\>', '.meavim', 'g')
-call vundle#rc()
 "
 "if .vim dir is not on default location
 "
@@ -12,12 +12,10 @@ call vundle#rc()
 
 " let Vundle manage Vundle
 " required! 
-Plugin 'gmarik/vundle'
+Plugin 'VundleVim/Vundle.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'vim-airline/vim-airline'
-Plugin 'garbas/vim-snipmate'
-Plugin 'honza/vim-snippets'
 Plugin 'MarcWeber/vim-addon-mw-utils'
 Plugin 'tpope/vim-surround'
 Plugin 'gregsexton/MatchTag'
@@ -37,6 +35,8 @@ Plugin 'w0rp/ale'
 Plugin 'sheerun/vim-polyglot'
 Plugin 'romainl/flattened'
 Plugin 'morhetz/gruvbox'
+
+call vundle#end()            " required
 
 let g:PreviewBrowsers='chromium'
 
@@ -97,6 +97,7 @@ set fileencodings=utf-8,cp1251,koi8-r,cp866
 "filetype-specific settings"
 
 
+set guifont=Menlo\ Regular:h14
 if has('gui_running')
         colorscheme slate
     else
