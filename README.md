@@ -6,7 +6,7 @@ Should work on mac and linux
 To use copy-paste this:
 ```
 git clone https://github.com/meako689/dotvim.git ~/.vim &&
-git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle &&
+git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim &&
 ln -s ~/.vim/vimrc ~/.vimrc
 ```
 
